@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "8e550e0c-23fb-417f-9d07-f390054b3c71",
+		"name": "Node + Express Collection Exercise 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Root Router",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Hello Without Name in Query Param",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/hello",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"hello"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Hello With Name in Query Param",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/hello?name=David",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"hello"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "David",
+							"description": "Name of User"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Goodbye Without Name in Query Param",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/goodbye",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"goodbye"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Goodbye With Name in Query Param",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/goodbye?name=David",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"goodbye"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "David"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
