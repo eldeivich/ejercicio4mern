@@ -1,4 +1,70 @@
-# Ejercicio 4 del Curso de MERN de OpenBootcamp
+# Ejercicio 4.1 del Curso de MERN de OpenBootcamp
+
+## Peticiones al servidor de Mongo del ejercicio 4.1
+
+> Importa el JSON a una colección llamada Contacts:
+
+![alt Get Root Router](src/images/mongo1.png)
+
+> Listar todos los contactos:
+
+    db.Contacts.find()
+
+![alt Listar todos los contactos](src/images/mongo2.png)
+
+> Busca el primer contacto que sea de Alemania (Germany):
+
+    db.Contacts.findOne({"location.country": "Germany"})
+
+![alt Busca el primer contacto que sea de Alemania (Germany)](src/images/mongo3.png)
+
+> Busca todos los contactos que tengan Blake como nombre (first)
+
+    db.contacts.find({"name.first": "Blake})
+
+![alt Busca todos los contactos que tengan Blake como nombre (first)](src/images/mongo4.png)
+
+> Busca los primeros 5 contactos que tengan como género (gender) hombre (male)
+
+    db.Contacts.find({"gender": "male"}).limit(5)
+
+![alt Busca los primeros 5 contactos que tengan como género (gender) hombre (male)](src/images/mongo5.png)
+
+> Devuelve los 4 primeros contactos ordenados por nombre (name) de manera descendente
+
+    db.Contacts.find().limit(4).sort({"name.first": -1})
+
+![alt Devuelve los 4 primeros contactos ordenados por nombre (name) de manera descendente](src/images/mongo6.png)
+
+> Clona la colección de Contacts a CopiaContacts y luego bórrala
+
+    db.Contacts.aggregate([{$out: "CopiaContacts"}])
+
+![alt Clona la colección de Contacts a CopiaContacts y luego bórrala](src/images/mongo7.png)
+
+    db.CopiaContacts.drop()
+
+![alt borrar copia](src/images/mongo8.png)
+
+> Renombra el campo de name por nombre
+
+    db.Contacts.updateMany({}, {$rename: {name: "nombre"}})
+
+![alt Renombra el campo de name por nombre](src/images/mongo9.png)
+
+> Borra todos los contactos que tengan como estado (state) Florida
+    
+    > Listo los contactos de Florida antes de borrar:
+
+![alt Lista contactos Florida antes de borrar](src/images/mongo10.png)
+
+    db.Contacts.deleteMany({"location.state": "Florida"})
+
+![alt Borra todos los contactos que tengan como estado (state) Florida](src/images/mongo11.png)
+
+    >Listo los contacots de Florida después de borrar:
+
+![alt Lista contactos Florida después de borrar](src/images/mongo12.png)
 
 ## Dependencias instaladas del ejercicio 3
 
@@ -189,20 +255,20 @@ Por el momento solo hay una:
 
 ### Get Root Router
 
-![alt Get Root Router](postman-get-root-router.png)
+![alt Get Root Router](src/images/postman-get-root-router.png)
 
 ### Get Hello Whithout Name in Query Param
 
-![alt Get Hello Whithout Name in Query Param](postman-get-hello-without-name-in-query-param.png)
+![alt Get Hello Whithout Name in Query Param](src/images/postman-get-hello-without-name-in-query-param.png)
 
 ### Get Hello With Name in Query Param
 
-![alt Get Hello With Name in Query Param](postman-get-hello-with-name-in-query-param.png)
+![alt Get Hello With Name in Query Param](src/images/postman-get-hello-with-name-in-query-param.png)
 
 ### Get Goodbye Without Name in Query Param
 
-![alt Get Goodbye Without Name in Query Param](postman-get-goodbye-without-name-in-query-param.png)
+![alt Get Goodbye Without Name in Query Param](src/images/postman-get-goodbye-without-name-in-query-param.png)
 
 ### Get Goodbye With Name in Query Param
 
-![alt Get Goodbye With Name in Query Param](postman-get-goodbye-with-name-in-query-param.png)
+![alt Get Goodbye With Name in Query Param](src/images/postman-get-goodbye-with-name-in-query-param.png)

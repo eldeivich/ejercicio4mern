@@ -1,5 +1,8 @@
 import express, { Express, Request, Response } from "express";
 
+// * Swagger
+import SwaggerUI from 'swagger-ui-express';
+
 // * Security
 import cors from 'cors';
 import helmet from 'helmet';
@@ -8,9 +11,22 @@ import helmet from 'helmet';
 
 // * Root Router
 import rootRouter from '../routes';
+import mongoose from "mongoose";
 
 // * Create Express APP
 const server: Express = express();
+
+// * Swagger Config and Route
+server.use(
+    '/docs',
+    SwaggerUI.serve,
+    SwaggerUI.setup(undefined, {
+        swaggerOptions: {
+            url: "/swagger.json",
+            explorer: true
+        }
+    })
+);
 
 // * Define SERVER to use "/api" and use rootRouter from 'index.ts in routes
 // From this point onover: http://localhost:8000/api/...
@@ -20,6 +36,7 @@ server.use('/api', rootRouter);
 server.use(express.static('public'));
 
 // TODO: Mongoose Connection
+mongoose.connect('mongodb://localhost:27017/Katas')
 
 // * Security Config
 server.use(helmet());

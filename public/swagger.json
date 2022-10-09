@@ -22,9 +22,9 @@
 		"securitySchemes": {}
 	},
 	"info": {
-		"title": "ejercicio3mern",
-		"version": "1.0.0",
-		"description": "Ejercicio 3 del curso de TypeScript del mern de Open Bootcamp",
+		"title": "ejercicio4mern",
+		"version": "4.0.0",
+		"description": "Ejercicio 4 del curso de TypeScript del mern de Open Bootcamp",
 		"license": {
 			"name": "ISC"
 		},

@@ -1,7 +1,7 @@
 {
   "name": "ejercicio4mern",
-  "version": "4.0.0",
-  "description": "Ejercicio 4 del curso de TypeScript del mern de Open Bootcamp",
+  "version": "4.1.0",
+  "description": "Ejercicio 4.1 del curso de TypeScript del mern de Open Bootcamp",
   "main": "index.js",
   "scripts": {
     "start": "node dist/index.js",
